@@ -4,7 +4,7 @@ import "./UsersList.css";
 import UserItem from "./UserItem";
 
 const UsersList = (props) => {
-	if (props.items == 0) {
+	if (props.items.length === 0) {
 		return (
 			<div>
 				<h1>No Users Found</h1>
@@ -13,8 +13,8 @@ const UsersList = (props) => {
 	}
 
 	return (
-		<ul>
-			{props.items.map(() => {
+		<ul className="users-list">
+			{props.items.map((user) => {
 				return (
 					<UserItem
 						key={user.id}
