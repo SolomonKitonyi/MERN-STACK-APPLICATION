@@ -9,6 +9,14 @@ import "./MainNavigation.css";
 const MainNavigation = () => {
 	const [drawerIsOpen, setDrawerIsOpen] = useState(false);
 
+	const closeDrawer = () => {
+		setDrawerIsOpen(false);
+	};
+
+	const openDrawer = () => {
+		setDrawerIsOpen(true);
+	};
+
 	return (
 		<React.Fragment>
 			{drawerIsOpen && (
@@ -20,7 +28,7 @@ const MainNavigation = () => {
 			)}
 
 			<MainHeader>
-				<button className="main-navigation__menu-btn">
+				<button className="main-navigation__menu-btn" onClick={openDrawer}>
 					<span />
 					<span />
 					<span />
